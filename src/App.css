@@ -1,4 +1,19 @@
-.App {
+:root {
+  --light-green: #299;
+  --dark-green: #277;
+  --yellow: #ffff00;
+}
+
+* {
+  font-family: 'Jura', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+/*.App {
   text-align: center;
 }
 
@@ -35,4 +50,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+}*/
