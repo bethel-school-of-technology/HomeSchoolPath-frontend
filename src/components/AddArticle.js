@@ -22,10 +22,10 @@ const AddArticle = () => {
 
         axios
         .post("/articles/add", articles)
-        .this(res => console.log(res.data))
+        .then(res => console.log(res.data))
         .catch(err => {
             console.log(err);
-        })
+        });
     };
     return (
         <AddArticleContainer>
