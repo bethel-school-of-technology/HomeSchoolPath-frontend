@@ -26,6 +26,11 @@ const Navbar = () => {
                 Add Article
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/about-us">
+                About Us
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
