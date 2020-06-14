@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import SigninComponent from '../components/auth/SigninComponent';
+import SigninComponent from "../components/auth/SigninComponent";
 //import Link from 'next/link';
 
 const Signin = () => {
@@ -7,9 +7,9 @@ const Signin = () => {
     <Layout>
       <h2 className="text-center pt-4 pb-4">Signin</h2>
       <div className="row">
-      <div className="col-md10 offset-md-5">
-      <SigninComponent />
-      </div>
+        <div className="col-md10 offset-md-5">
+          <SigninComponent />
+        </div>
       </div>
     </Layout>
   );

@@ -1,12 +1,12 @@
 import Layout from "../components/Layout";
-import Link from 'next/link';
+import Link from "next/link";
 
 const Index = () => {
   return (
     <Layout>
       <h2>The Home School Path Index Page</h2>
       <Link href="/signup">
-          <a>Signup</a>
+        <a>Signup</a>
       </Link>
     </Layout>
   );

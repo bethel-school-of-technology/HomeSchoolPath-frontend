@@ -1,14 +1,14 @@
-import Header from './Header';
+import Header from "./Header";
 
-const Layout = ({children}) => {
-    return (
-        <React.Fragment>
-        <Header />
-        {children}
+const Layout = ({ children }) => {
+  return (
+    <React.Fragment>
+      <Header />
+      {children}
 
-        <p>Footer</p>
-        </React.Fragment>
-    );
+      <p>Footer</p>
+    </React.Fragment>
+  );
 };
 
 export default Layout;
