@@ -24,16 +24,19 @@ const SigninComponent = () => {
     setValues({ ...values, loading: true, error: false });
     const user = { email, password };
 
-    signin(user).then((data) => {
+    signin(user).then(data => {
       if (data.error) {
         setValues({ ...values, error: data.error, loading: false });
       } else {
-        //actions auth file
-        // save user token to cookie
+        //actions auth file - save user token to cookie
         // save user info to localstorage
         // authenticate user
         authenticate(data, () => {
-          Router.push(`/`);
+          if (isAuth() && isAuth().role === 1) {
+            Router.push(`/admin`);
+          } else {
+            Router.push(`/user`);
+          }
         });
       }
     });
