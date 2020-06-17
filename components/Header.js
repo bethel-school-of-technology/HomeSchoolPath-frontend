@@ -90,7 +90,7 @@ const Header = () => {
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
-          <NavbarText>Our Future is Our Children</NavbarText>
+          <NavbarText>The Home School Path Blog</NavbarText>
         </Collapse>
       </Navbar>
     </div>
