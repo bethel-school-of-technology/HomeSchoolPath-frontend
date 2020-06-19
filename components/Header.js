@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Router from "next/router";
 import { APP_NAME } from "../config";
@@ -27,8 +27,14 @@ Router.onRouteChangeError = url => NProgress.done();
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [authenicated, setAuthenticated] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
+    const toggle = () => setIsOpen(!isOpen);
+
+    useEffect(() => {
+      setAuthenticated(isAuth());
+    }, []);
+  
 
   return (
     <div>
