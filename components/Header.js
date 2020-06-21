@@ -37,7 +37,7 @@ const Header = () => {
   
 
   return (
-    <div>
+    <div style={{color: 'red'}}>
       <Navbar color="light" light expand="md">
         <Link href="/">
           <NavLink className="font-weight-bold">{APP_NAME}</NavLink>
@@ -45,6 +45,15 @@ const Header = () => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
+
+          <React.Fragment>
+              <NavItem>
+                <Link href="/blogs">
+                  <NavLink>Blogs</NavLink>
+                </Link>
+              </NavItem>
+            </React.Fragment>
+          
             {!isAuth() && (
               <React.Fragment>
                 <NavItem>
@@ -89,7 +98,7 @@ const Header = () => {
                 Options
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>Option 1</DropdownItem>
+                <DropdownItem>About</DropdownItem>
                 <DropdownItem>Option 2</DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>Reset</DropdownItem>

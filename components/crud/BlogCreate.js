@@ -11,6 +11,7 @@ const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import "../../node_modules/react-quill/dist/quill.snow.css";
 import {QuillModules, QuillFormats} from '../../helpers/quill'
 const CreateBlog = ({ router }) => {
+
   const blogFromLS = () => {
     if (typeof window === "undefined") {
       return false;
@@ -173,7 +174,7 @@ const showSuccess = () => (
       <form onSubmit={publishBlog}>
         <div className="form-group">
           <label className="text-muted">Title</label>
-          <input
+          <input 
             type="text"
             className="form-control"
             value={title}
