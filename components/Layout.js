@@ -5,10 +5,14 @@ import Footer from "./Footer";
 const Layout = ({ children }) => {
   return (
     <React.Fragment>
+    <div className="bg">
       <Header />
       {children}
-
-      <p>Footer</p>
+      </div> 
+      <div className="pt-60px">
+      <Footer />
+      </div>
+      
     </React.Fragment>
   );
 };

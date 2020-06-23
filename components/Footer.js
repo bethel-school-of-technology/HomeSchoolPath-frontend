@@ -7,6 +7,7 @@ import Router from "next/router";
 import NProgress from 'nprogress';
 
 
+
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 const Footer = () => {
@@ -16,11 +17,12 @@ const Footer = () => {
 
   return (
     <div>
-      <Navbar style={{color: 'red'}} >
-        <NavbarBrand className="ml-auto" >
+      <Navbar style={{backgroundColor: 'yellow'}} >
+        <NavbarBrand className="pt-60px" >
         <NavbarBrand>
       &copy; {new Date().getFullYear()} 
       All Rights Reserved. Kingdom Coders.
+      
 </NavbarBrand>
 </NavbarBrand>
 
