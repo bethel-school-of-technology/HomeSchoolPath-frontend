@@ -4,7 +4,11 @@ import Link from "next/link";
 import Router from "next/router";
 //import { APP_NAME } from "../config";
 //import { signout, isAuth } from "../actions/auth";
+import NProgress from 'nprogress';
 
+
+
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 const Footer = () => {
   const [collapsed, setCollapsed] = useState(true);
@@ -13,17 +17,17 @@ const Footer = () => {
 
   return (
     <div>
-      <reactstrap.Navbar style={{backgroundColor: 'yellow'}} >
-        <reactstrap.NavbarBrand className="pt-60px" >
-        <reactstrap.NavbarBrand>
+      <Navbar style={{backgroundColor: 'yellow'}} >
+        <NavbarBrand className="pt-60px" >
+        <NavbarBrand>
       &copy; {new Date().getFullYear()} 
       All Rights Reserved. Kingdom Coders.
       
-</reactstrap.NavbarBrand>
-</reactstrap.NavbarBrand>
+</NavbarBrand>
+</NavbarBrand>
 
         
-      </reactstrap.Navbar>
+      </Navbar>
     </div>
   );
 }

@@ -35,7 +35,7 @@ export const createBlog = (blog, token) => {
   };
 
   export const singleBlog = slug => {
-    return fetch(`${API}/blog/${slug}`, {
+    return fetch(`${API}/blog/S{slug}`, {
       method: 'GET'
     })
     .then(response => {

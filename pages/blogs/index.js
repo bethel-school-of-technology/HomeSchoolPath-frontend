@@ -145,7 +145,11 @@ const Blogs = ({
     </React.Fragment>
   );
 };
-  listBlogsWithCategoriesAndTags(skip, limit).then((data) => {
+
+Blogs.getInitialProps = () => {
+  let skip = 0;
+  let limit = 2;
+  return listBlogsWithCategoriesAndTags(skip, limit).then((data) => {
     if (data.error) {
       console.log(data.error);
     } else {
@@ -159,5 +163,6 @@ const Blogs = ({
       };
     }
   });
+};
 
 export default withRouter(Blogs); // getInitialProps
