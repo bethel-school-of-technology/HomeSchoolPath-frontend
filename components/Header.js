@@ -4,7 +4,7 @@ import Router from "next/router";
 import { APP_NAME } from "../config";
 import { signout, isAuth } from "../actions/auth";
 import NProgress from './App';
- 
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 Router.onRouteChangeStart = url => NProgress.start();
 Router.onRouteChangeComplete = url => NProgress.done();
 Router.onRouteChangeError = url => NProgress.done();

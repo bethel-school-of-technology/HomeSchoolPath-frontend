@@ -4,7 +4,7 @@ import Link from "next/link";
 import Router from "next/router";
 //import { APP_NAME } from "../config";
 //import { signout, isAuth } from "../actions/auth";
-
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 const Footer = () => {
   const [collapsed, setCollapsed] = useState(true);
