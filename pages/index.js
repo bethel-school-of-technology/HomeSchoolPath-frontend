@@ -4,7 +4,7 @@ import Link from "next/link";
 const Index = () => {
   return (
     <Layout>
-      <h2>The Home School Path Index Page</h2>
+      <h2 className="display-4 font-weight-bold">WELCOME TO THE HOMESCHOOL PATH</h2>
       <Link href="/signup">
         <a>Signup</a>
       </Link>

@@ -47,11 +47,11 @@ const SigninComponent = () => {
   };
 
   const showLoading = () =>
-    loading ? <div className="alert alert-info">Loading...</div> : "";
+    (loading ? <div className="alert alert-info">Loading...</div> : "");
   const showError = () =>
-    error ? <div className="alert alert-danger">{error}</div> : "";
+    (error ? <div className="alert alert-danger">{error}</div> : "");
   const showMessage = () =>
-    message ? <div className="alert alert-info">{message}</div> : "";
+    (message ? <div className="alert alert-info">{message}</div> : "");
 
   const signinForm = () => {
     return (

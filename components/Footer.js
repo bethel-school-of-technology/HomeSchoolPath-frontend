@@ -19,11 +19,11 @@ const Footer = () => {
     <div>
       <Navbar style={{backgroundColor: 'yellow'}} >
         <NavbarBrand className="pt-60px" >
-        <NavbarBrand>
+        <small className="text-muted">
       &copy; {new Date().getFullYear()} 
       All Rights Reserved. Kingdom Coders.
       
-</NavbarBrand>
+</small>
 </NavbarBrand>
 
         

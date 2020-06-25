@@ -2,37 +2,37 @@ import fetch from "isomorphic-fetch";
 import cookie from "js-cookie";
 import { API } from "../config";
 
-export const signup = user => {
+export const signup = (user) => {
   return fetch(`${API}/signup`, {
     method: "POST",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(user)
+    body: JSON.stringify(user),
   })
-    .then(response => {
+    .then((response) => {
       return response.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 
-export const signin = user => {
+export const signin = (user) => {
   return fetch(`${API}/signin`, {
     method: "POST",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(user)
+    body: JSON.stringify(user),
   })
-    .then(response => {
+    .then((response) => {
       return response.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 
-export const signout = next => {
+export const signout = (next) => {
   removeCookie("token");
   removeLocalStorage("user");
   next();
@@ -40,30 +40,30 @@ export const signout = next => {
   return fetch(`${API}/signout`, {
     method: "GET",
   })
-    .then(response => {
+    .then((response) => {
       console.log("signout success");
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 
 // set cookie
 export const setCookie = (key, value) => {
   if (process.browser) {
     cookie.set(key, value, {
-      expires: 1
+      expires: 1,
     });
   }
 };
 
-export const removeCookie = key => {
+export const removeCookie = (key) => {
   if (process.browser) {
     cookie.remove(key, {
-      expires: 1
+      expires: 1,
     });
   }
 };
 // get cookie
-export const getCookie = key => {
+export const getCookie = (key) => {
   if (process.browser) {
     return cookie.get(key);
   }
@@ -75,7 +75,7 @@ export const setLocalStorage = (key, value) => {
   }
 };
 
-export const removeLocalStorage = key => {
+export const removeLocalStorage = (key) => {
   if (process.browser) {
     localStorage.removeItem(key);
   }

@@ -5,7 +5,7 @@ import Layout from "../../components/Layout";
 import { useState } from "react";
 import { listBlogsWithCategoriesAndTags } from "../../actions/blog";
 import Card from "../../components/blog/Card";
-import { API, DOMAIN, APP_NAME, FB_APP_ID } from "../../config";
+import { API, DOMAIN, APP_NAME } from "../../config";
 
 const Blogs = ({
   blogs,
@@ -14,7 +14,7 @@ const Blogs = ({
   totalBlogs,
   blogsLimit,
   blogSkip,
-  router,
+  router
 }) => {
   const head = () => (
     <Head>
@@ -45,7 +45,6 @@ const Blogs = ({
         content={`${DOMAIN}/static/images/thehomeschoolpath.jpg`}
       />
       <meta property="og:image;type" content="image/jpg" />
-      <meta property="fb:app_id" content={`${FB_APP_ID}`} />
     </Head>
   );
 
@@ -56,7 +55,7 @@ const Blogs = ({
 
   const loadMore = () => {
     let toSkip = skip + limit;
-    listBlogsWithCategoriesAndTags(toSkip, limit).then((data) => {
+    listBlogsWithCategoriesAndTags(toSkip, limit).then(data => {
       if (data.error) {
         console.log(data.error);
       } else {
@@ -125,7 +124,7 @@ const Blogs = ({
             <header>
               <div className="col-md-12 pt-3">
                 <h1 className="display-4 font-weight-bold text-center">
-                  Homeschooling blogs for You and by You!
+                  The Homeschooling Path Blogs for You!
                 </h1>
               </div>
               <section>
@@ -149,7 +148,7 @@ const Blogs = ({
 Blogs.getInitialProps = () => {
   let skip = 0;
   let limit = 2;
-  return listBlogsWithCategoriesAndTags(skip, limit).then((data) => {
+  return listBlogsWithCategoriesAndTags(skip, limit).then(data => {
     if (data.error) {
       console.log(data.error);
     } else {

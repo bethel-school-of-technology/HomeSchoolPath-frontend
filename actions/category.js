@@ -11,10 +11,10 @@ export const create = (category, token) => {
       },
       body: JSON.stringify(category),
     })
-      .then((response) => {
+      .then(response => {
         return response.json();
       })
-      .catch((err) => console.log(err));
+      .catch(err => console.log(err));
   };
 
   export const getCategories = () => {
@@ -24,7 +24,7 @@ export const create = (category, token) => {
       .then(response => {
         return response.json();
       })
-      .catch((err) => console.log(err));
+      .catch(err => console.log(err));
   };
 
   export const singleCategory = (slug) => {
@@ -44,10 +44,10 @@ export const create = (category, token) => {
         Accept: "application/json",
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`
-      },
+      }
     })
       .then(response => {
         return response.json();
       })
-      .catch((err) => console.log(err));
+      .catch(err => console.log(err));
   };

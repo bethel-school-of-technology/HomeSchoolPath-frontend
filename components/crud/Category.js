@@ -44,7 +44,7 @@ const showCategories = () => {
 
 const deleteConfirm = slug => {
     let answer = window.confirm("Are you sure you want to delete this category?");
-    if(answer) {
+    if (answer) {
         deleteCategory(slug);
     }
 };
@@ -55,7 +55,7 @@ const deleteCategory = slug => {
         if (data.error) {
             console.log(data.error);
         } else {
-            setValues({...values, error: false, success: false, name: '', removed: !removed, reload: !reload})
+            setValues({...values, error: false, success: false, name: '', removed: !removed, reload: !reload});
         };
     });
 };

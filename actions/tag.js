@@ -9,22 +9,22 @@ export const create = (tag, token) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`
       },
-      body: JSON.stringify(tag),
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .catch((err) => console.log(err));
-  };
-
-  export const getTags = () => {
-    return fetch(`${API}/tags`, {
-      method: "GET",
+      body: JSON.stringify(tag)
     })
       .then(response => {
         return response.json();
       })
-      .catch((err) => console.log(err));
+      .catch(err => console.log(err));
+  };
+
+  export const getTags = () => {
+    return fetch(`${API}/tags`, {
+      method: "GET"
+    })
+      .then(response => {
+        return response.json();
+      })
+      .catch(err => console.log(err));
   };
 
   export const singleTag = (slug) => {
@@ -44,10 +44,10 @@ export const create = (tag, token) => {
         Accept: "application/json",
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`
-      },
+      }
     })
       .then(response => {
         return response.json();
       })
-      .catch((err) => console.log(err));
+      .catch(err => console.log(err));
   };
