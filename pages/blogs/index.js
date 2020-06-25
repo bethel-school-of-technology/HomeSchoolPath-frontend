@@ -7,6 +7,7 @@ import { listBlogsWithCategoriesAndTags } from "../../actions/blog";
 import Card from "../../components/blog/Card";
 import { API, DOMAIN, APP_NAME, FB_APP_ID } from "../../config";
 
+
 const Blogs = ({
   blogs,
   categories,
