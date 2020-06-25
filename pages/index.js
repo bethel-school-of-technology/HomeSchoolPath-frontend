@@ -1,24 +1,15 @@
 import Layout from "../components/Layout";
 import Link from "next/link";
-<<<<<<< HEAD
 
 const Index = () => {
   return (
     <Layout>
-      <h2 className="display-4 font-weight-bold">WELCOME TO THE HOMESCHOOL PATH</h2>
+      <h2 className="display-4 font-weight-bold">
+      WELCOME TO THE HOMESCHOOL PATH</h2>
       <Link href="/signup">
         <a>Signup</a>
       </Link>
       <div>
-=======
-const Index = () => (
-  <Layout>
-    <h2>The Home School Path Index Page</h2>
-    <Link href="/signup">
-      <a>Signup</a>
-    </Link>
-    <div>
->>>>>>> d43c271522e0cecdf0baa426e755309cc5f21f02
       "Free Resources, FAQ for Families Educating at Home During Coronavirus Pandemic
             Around the nation, more than 124,000 schools have closed, impacting more than 55.1 million stude      nts.
 
@@ -30,5 +21,6 @@ const Index = () => (
     </div>
   </Layout>
 );
+};
 
 export default Index;

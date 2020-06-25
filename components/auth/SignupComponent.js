@@ -2,7 +2,6 @@ import * as react from "react";
 import { signup, isAuth } from "../../actions/auth";
 import Router from "next/router";
 
-
 const SignupComponent = () => {
   const [values, setValues] = react.useState({
     name: "",
