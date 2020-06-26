@@ -20,6 +20,7 @@ import {
 } from "reactstrap";
 
 import '../node_modules/nprogress/nprogress.css';
+import Search from "./blog/Search";
 
 Router.onRouteChangeStart = url => NProgress.start();
 Router.onRouteChangeComplete = url => NProgress.done();
@@ -37,6 +38,7 @@ const Header = () => {
   
 
   return (
+    <React.Fragment>
     <div style={{color: 'red'}}>
       <Navbar color="light" light expand="md">
         <Link href="/">
@@ -88,7 +90,7 @@ const Header = () => {
 
           {isAuth() && (
               <NavItem>
-                <NavLink style={{ cursor: "pointer" }} onClick={() => signout(() => Router.replace(`/signin`))}>
+                <NavLink style={{ cursor: 'pointer' }} onClick={() => signout(() => Router.replace(`/signin`))}>
                   Signout
                 </NavLink>
               </NavItem>
@@ -108,7 +110,9 @@ const Header = () => {
           <NavbarText>The Home School Path Blog</NavbarText>
         </Collapse>
       </Navbar>
+      <Search />
     </div>
+    </React.Fragment>
   );
 };
 
