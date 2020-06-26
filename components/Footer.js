@@ -33,11 +33,3 @@ const Footer = () => {
 }
 
 export default Footer;
-
-//const divner = styled.footer`
-  //background: #344;
-  //height: 4rem;
-  //left: 0;
-  //bottom: 0;
-  //width:100%;
-//`;

@@ -54,7 +54,7 @@ const BlogRead = () => {
             )
         } else if (isAuth() && isAuth().role === 1) {
             return (
-                <Link href={`/admin/crud/${blogs.slug}`}>
+                <Link href={`/admin/crud/${blog.slug}`}>
                     <a className="ml-3 btn btn-sm btn-warning">Update</a>
                 </Link>
             );
