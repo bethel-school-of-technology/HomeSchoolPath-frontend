@@ -1,9 +1,10 @@
 import * as react from "react";
+import { useState, useEffect } from "react";
 import { signup, isAuth } from "../../actions/auth";
 import Router from "next/router";
 
 const SignupComponent = () => {
-  const [values, setValues] = react.useState({
+  const [values, setValues] = useState({
     name: "",
     email: "",
     password: "",
@@ -15,7 +16,7 @@ const SignupComponent = () => {
 
   const { name, email, password, error, loading, message, showForm } = values;
 
-  react.useEffect(() => {
+  useEffect(() => {
     isAuth() && Router.push(`/`);
   }, []);
 
@@ -25,7 +26,7 @@ const SignupComponent = () => {
     setValues({ ...values, loading: true, error: false });
     const user = { name, email, password };
 
-    signup(user).then(data => {
+    signup(user).then((data) => {
       if (data.error) {
         setValues({ ...values, error: data.error, loading: false });
       } else {
@@ -48,47 +49,47 @@ const SignupComponent = () => {
   };
 
   const showLoading = () =>
-    loading ? <div className="alert alert-info">Loading...</div> : "";
+    loading ? <div className='alert alert-info'>Loading...</div> : "";
   const showError = () =>
-    error ? <div className="alert alert-danger">{error}</div> : "";
+    error ? <div className='alert alert-danger'>{error}</div> : "";
   const showMessage = () =>
-    message ? <div className="alert alert-info">{message}</div> : "";
+    message ? <div className='alert alert-info'>{message}</div> : "";
 
   const signupForm = () => {
     return (
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div className='form-group'>
           <input
             value={name}
             onChange={handleChange("name")}
-            type="text"
-            className="form-control"
-            placeholder="Type your name"
+            type='text'
+            className='form-control'
+            placeholder='Type your name'
           />
         </div>
 
-        <div className="form-group">
+        <div className='form-group'>
           <input
             value={email}
             onChange={handleChange("email")}
-            type="email"
-            className="form-control"
-            placeholder="Type your email"
+            type='email'
+            className='form-control'
+            placeholder='Type your email'
           />
         </div>
 
-        <div className="form-group">
+        <div className='form-group'>
           <input
             value={password}
             onChange={handleChange("password")}
-            type="password"
-            className="form-control"
-            placeholder="Type your password"
+            type='password'
+            className='form-control'
+            placeholder='Type your password'
           />
         </div>
 
         <div>
-          <button className="btn btn-primary">Signup</button>
+          <button className='btn btn-primary'>Signup</button>
         </div>
       </form>
     );

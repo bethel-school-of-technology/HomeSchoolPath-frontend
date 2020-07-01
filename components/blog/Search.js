@@ -37,14 +37,14 @@ const Search = () => {
 
   const searchedBlogs = (results = []) => {
     return (
-      <div className="jumbotron bg-white">
-        {message && <p className="pt-4 text-muted font-italic">{message}</p>}
+      <div className='jumbotron bg-white'>
+        {message && <p className='pt-4 text-muted font-italic'>{message}</p>}
 
         {results.map((blog, i) => {
           return (
             <div key={i}>
               <Link href={`/blogs/${blog.slug}`}>
-                <a className="text-primary">{blog.title}</a>
+                <a className='text-primary'>{blog.title}</a>
               </Link>
             </div>
           );
@@ -55,18 +55,18 @@ const Search = () => {
 
   const searchForm = () => (
     <form onSubmit={searchSubmit}>
-      <div className="row">
-        <div className="col-md-8">
+      <div className='row'>
+        <div className='col-md-8'>
           <input
-            type="search"
-            className="form-control"
-            placeholder="Search Blogs"
+            type='search'
+            className='form-control'
+            placeholder='Search Blogs'
             onChange={handleChange}
           />
         </div>
 
-        <div className="clo-md-4">
-          <button className="btn btn-block btn-outline-primary" type="submit">
+        <div className='col-md-4'>
+          <button className='btn btn-block btn-outline-primary' type='submit'>
             Search
           </button>
         </div>
@@ -75,8 +75,8 @@ const Search = () => {
   );
 
   return (
-    <div className="container-fluid">
-      <div className="pt-3 pb-5">{searchForm()}</div>
+    <div className='container-fluid'>
+      <div className='pt-3 pb-5'>{searchForm()}</div>
       {searched && (
         <div style={{ marginTop: "-120px", marginBottom: "-80px" }}>
           {searchedBlogs(results)}
