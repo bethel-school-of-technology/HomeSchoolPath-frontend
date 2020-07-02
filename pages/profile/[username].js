@@ -4,6 +4,7 @@ import Layout from "../../components/Layout";
 import { userPublicProfile } from "../../actions/user";
 import { API, DOMAIN, APP_NAME } from "../../config";
 import moment from "moment";
+import ContactForm from "../../components/form/ContactForm";
 
 const UserProfile = ({ user, blogs, query }) => {
   const showUserBlogs = () => {
@@ -17,6 +18,7 @@ const UserProfile = ({ user, blogs, query }) => {
       );
     });
   };
+
   return (
     <React.Fragment>
       <Layout>
@@ -52,7 +54,7 @@ const UserProfile = ({ user, blogs, query }) => {
             <div className='col-md-6'>
               <div className='card'>
                 <div className='card-body'>
-                  <h5 className='card-title bg-primary pt-4 pb-4 pl-4 pr-4 text-light'>
+                  <h5 className='card-title bg-primary pt-4 pb-4 pl-4 pr-4 text-white'>
                     Recent blogs by {user.name}
                   </h5>
                   {showUserBlogs()}
@@ -63,10 +65,10 @@ const UserProfile = ({ user, blogs, query }) => {
               <div className='card'>
                 <div className='card-body'>
                   <h5 className='card-title bg-primary pt-4 pb-4 pl-4 pr-4 text-light'>
-                    Message{user.name}
+                    Message {user.name}
                   </h5>
                   <br />
-                  <p>Contact form</p>
+                  <p>ContactForm</p>
                 </div>
               </div>
             </div>

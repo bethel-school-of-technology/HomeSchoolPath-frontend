@@ -7,8 +7,11 @@ import { listBlogsWithCategoriesAndTags } from "../../actions/blog";
 import Card from "../../components/blog/Card";
 import { API, DOMAIN, APP_NAME } from "../../config";
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 66d305b0ca541f978d1f0128c435d1b442fe0b94
 const Blogs = ({
   blogs,
   categories,
@@ -16,37 +19,37 @@ const Blogs = ({
   totalBlogs,
   blogsLimit,
   blogSkip,
-  router
+  router,
 }) => {
   const head = () => (
     <Head>
       <title>The Homeschool Path | {APP_NAME}</title>
       <meta
-        name="description"
-        content="Homeschooling blog and information and experience sharing platform for parents and educators that want to share."
+        name='description'
+        content='Homeschooling blog and information and experience sharing platform for parents and educators that want to share.'
       />
-      <link rel="canonical" href={`${DOMAIN}${router.pathname}`} />
+      <link rel='canonical' href={`${DOMAIN}${router.pathname}`} />
       <meta
-        property="og:title"
+        property='og:title'
         content={`Latest Homeschool experiences | ${APP_NAME}`}
       />
       <meta
-        property="og:description"
-        content="Homeschooling blog and information and experience sharing platform for parents and educators that want to share."
+        property='og:description'
+        content='Homeschooling blog and information and experience sharing platform for parents and educators that want to share.'
       />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={`${DOMAIN}${router.pathname}`} />
-      <meta property="og:site_name" content={`${APP_NAME}`} />
+      <meta property='og:type' content='website' />
+      <meta property='og:url' content={`${DOMAIN}${router.pathname}`} />
+      <meta property='og:site_name' content={`${APP_NAME}`} />
 
       <meta
-        property="og:image"
+        property='og:image'
         content={`${DOMAIN}/static/images/thehomeschoolpath.jpg`}
       />
       <meta
-        property="og:image:secure_url"
+        property='og:image:secure_url'
         content={`${DOMAIN}/static/images/thehomeschoolpath.jpg`}
       />
-      <meta property="og:image;type" content="image/jpg" />
+      <meta property='og:image;type' content='image/jpg' />
     </Head>
   );
 
@@ -57,7 +60,7 @@ const Blogs = ({
 
   const loadMore = () => {
     let toSkip = skip + limit;
-    listBlogsWithCategoriesAndTags(toSkip, limit).then(data => {
+    listBlogsWithCategoriesAndTags(toSkip, limit).then((data) => {
       if (data.error) {
         console.log(data.error);
       } else {
@@ -72,7 +75,7 @@ const Blogs = ({
     return (
       size > 0 &&
       size >= limit && (
-        <button onClick={loadMore} className="btn btn-primary btn-lg">
+        <button onClick={loadMore} className='btn btn-primary btn-lg'>
           Load More
         </button>
       )
@@ -93,7 +96,7 @@ const Blogs = ({
   const showAllCategories = () => {
     return categories.map((c, i) => (
       <Link href={`/categories/${c.slug}`} key={i}>
-        <a className="btn btn-primary mr-1 ml-1 mt-3">{c.name}</a>
+        <a className='btn btn-primary mr-1 ml-1 mt-3'>{c.name}</a>
       </Link>
     ));
   };
@@ -101,7 +104,7 @@ const Blogs = ({
   const showAllTags = () => {
     return tags.map((t, i) => (
       <Link href={`/tags/${t.slug}`} key={i}>
-        <a className="btn btn-outline-primary mr-1 ml-1 mt-3">{t.name}</a>
+        <a className='btn btn-outline-primary mr-1 ml-1 mt-3'>{t.name}</a>
       </Link>
     ));
   };
@@ -120,17 +123,17 @@ const Blogs = ({
       <Layout>
         <main style={{ background: "pink" }}>
           <div
-            className="container-fluid"
+            className='container-fluid'
             style={{ color: "red", background: "yellow" }}
           >
             <header>
-              <div className="col-md-12 pt-3">
-                <h1 className="display-4 font-weight-bold text-center">
+              <div className='col-md-12 pt-3'>
+                <h1 className='display-4 font-weight-bold text-center'>
                   The Homeschooling Path Blogs for You!
                 </h1>
               </div>
               <section>
-                <div className="pb-5 text-center">
+                <div className='pb-5 text-center'>
                   {showAllCategories()}
                   <br />
                   {showAllTags()}
@@ -138,9 +141,9 @@ const Blogs = ({
               </section>
             </header>
           </div>
-          <div className="container-fluid">{showAllBlogs()}</div>
-          <div className="container-fluid">{showLoadedBlogs()}</div>
-          <div className="text-center pt-5 pb-5">{loadMoreButton()}</div>
+          <div className='container-fluid'>{showAllBlogs()}</div>
+          <div className='container-fluid'>{showLoadedBlogs()}</div>
+          <div className='text-center pt-5 pb-5'>{loadMoreButton()}</div>
         </main>
       </Layout>
     </React.Fragment>
