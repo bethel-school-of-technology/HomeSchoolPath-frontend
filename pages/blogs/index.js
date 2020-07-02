@@ -8,6 +8,7 @@ import Card from "../../components/blog/Card";
 import { API, DOMAIN, APP_NAME } from "../../config";
 
 
+
 const Blogs = ({
   blogs,
   categories,
@@ -150,8 +151,11 @@ Blogs.getInitialProps = () => {
   let skip = 0;
   let limit = 2;
   return listBlogsWithCategoriesAndTags(skip, limit).then(data => {
-    if (data.error) {
-      console.log(data.error);
+ if  (data.error) {
+      /* the request was made and the server responded
+      with a status code that falls out of the range of 2xx */
+      console.log(data.error)
+  
     } else {
       return {
         blogs: data.blogs,
