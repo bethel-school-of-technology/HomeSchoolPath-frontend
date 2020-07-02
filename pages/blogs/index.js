@@ -7,11 +7,6 @@ import { listBlogsWithCategoriesAndTags } from "../../actions/blog";
 import Card from "../../components/blog/Card";
 import { API, DOMAIN, APP_NAME } from "../../config";
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 66d305b0ca541f978d1f0128c435d1b442fe0b94
 const Blogs = ({
   blogs,
   categories,
