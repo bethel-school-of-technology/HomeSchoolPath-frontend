@@ -7,15 +7,28 @@ export const handleResponse = (response) => {
   if (response.status === 401) {
     signout(() => {
       Router.push({
-        pathname: "/sigin",
+        pathname: "/signin",
         query: {
-          message: "Session has expired. Please signin",
+          message: "Your session is expired. Please signin",
         },
       });
     });
-  } else {
-    return;
   }
+};
+
+export const preSignup = (user) => {
+  return fetch(`${API}/pre-signup`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(user),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
 };
 
 export const signup = (user) => {
@@ -84,7 +97,7 @@ export const getCookie = (key) => {
     return cookie.get(key);
   }
 };
-// localStorage
+// localstorage
 export const setLocalStorage = (key, value) => {
   if (process.browser) {
     localStorage.setItem(key, JSON.stringify(value));
@@ -96,7 +109,7 @@ export const removeLocalStorage = (key) => {
     localStorage.removeItem(key);
   }
 };
-// authenticate user by pass data to cookie and localstorage
+// autheticate user by pass data to cookie and localstorage
 export const authenticate = (data, next) => {
   setCookie("token", data.token);
   setLocalStorage("user", data.user);
@@ -125,4 +138,19 @@ export const updateUser = (user, next) => {
       next();
     }
   }
+};
+
+export const loginWithGoogle = (user) => {
+  return fetch(`${API}/google-login`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(user),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
 };

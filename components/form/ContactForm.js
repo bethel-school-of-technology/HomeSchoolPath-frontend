@@ -1,117 +1,161 @@
 import { useState } from "react";
-import Link from "next/link";
-import { emailContactForm } from "../../actions/form";
+import "bulma/css/bulma.min.css";
 
-const ContactForm = ({ authorEmail }) => {
-  const [values, setValues] = useState({
-    message: "",
+const Home = () => {
+  const [contact, setContact] = useState({
     name: "",
     email: "",
-    sent: false,
-    buttonText: "Send Message",
-    success: false,
-    error: false,
+    subject: "StaticForms - Contact Form",
+    honeypot: "", // if any value received in this field, form submission will be ignored.
+    message: "",
+    replyTo: "@", // this will set replyTo of email to email address entered in the form
+    accessKey: "f06faa15-e7f6-4c9e-b4d3-631cc854dd72", // access key from https://www.staticforms.xyz
   });
 
-  const { message, name, email, sent, buttonText, success, error } = values;
+  const [response, setResponse] = useState({
+    type: "",
+    message: "",
+  });
 
-  const clickSubmit = (e) => {
+  const handleChange = (e) =>
+    setContact({ ...contact, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setValues({ ...values, buttonText: "Sending..." });
-    emailContactForm({ authorEmail, name, email, message }).then((data) => {
-      if (data.error) {
-        setValues({ ...values, error: data.error });
+    try {
+      const res = await fetch("https://api.staticforms.xyz/submit", {
+        method: "POST",
+        body: JSON.stringify(contact),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      const json = await res.json();
+
+      if (json.success) {
+        setResponse({
+          type: "success",
+          message: "Thank you for reaching out to us.",
+        });
       } else {
-        setValues({
-          ...values,
-          sent: true,
-          name: "",
-          email: "",
-          message: "",
-          buttonText: "Sent",
-          success: data.success,
+        setResponse({
+          type: "error",
+          message: json.message,
         });
       }
-    });
+    } catch (e) {
+      console.log("An error occurred", e);
+      setResponse({
+        type: "error",
+        message: "An error occured while submitting the form",
+      });
+    }
   };
-
-  const handleChange = (name) => (e) => {
-    setValues({
-      ...values,
-      [name]: e.target.value,
-      error: false,
-      success: false,
-      buttonText: "Send Message",
-    });
-  };
-
-  const showSuccessMessage = () =>
-    success && (
-      <div className='alert alert-info'>
-        We'll reply as soon as possible. Thank you.
-      </div>
-    );
-
-  const showErrorMessage = () => (
-    <div
-      className='alert alert-danger'
-      style={{ display: error ? "" : "none" }}
-    >
-      {error}
-    </div>
-  );
-
-  const contactForm = () => {
-    return (
-      <form onSubmit={clickSubmit} className='pb-5'>
-        <div className='form-group'>
-          <label className='lead'>Message</label>
-          <textarea
-            onChange={handleChange("message")}
-            type='text'
-            className='form-control'
-            value={message}
-            required
-            rows='10'
-          ></textarea>
-        </div>
-
-        <div className='form-group'>
-          <label className='lead'>Name</label>
-          <input
-            type='text'
-            onChange={handleChange("name")}
-            className='form-control'
-            value={name}
-            required
-          />
-        </div>
-
-        <div className='form-group'>
-          <label className='lead'>Email</label>
-          <input
-            type='email'
-            onChange={handleChange("email")}
-            className='form-control'
-            value={email}
-            required
-          />
-        </div>
-
-        <div>
-          <button className='btn btn-primary'>{buttonText}</button>
-        </div>
-      </form>
-    );
-  };
-
   return (
-    <React.Fragment>
-      {showSuccessMessage()}
-      {showErrorMessage()}
-      {contactForm()}
-    </React.Fragment>
+    <div>
+      <div className='section'>
+        <div className='container'>
+          <div className='columns'>
+            <div className='column' />
+            <div className='column  is-two-thirds'>
+              <div
+                className={
+                  response.type === "success"
+                    ? "tile box notification is-primary"
+                    : "is-hidden"
+                }
+              >
+                <p>{response.message}</p>
+              </div>
+              <div
+                className={
+                  response.type === "error"
+                    ? "tile box notification is-danger"
+                    : "is-hidden"
+                }
+              >
+                <p>{response.message}</p>
+              </div>
+              <div
+                className={response.message !== "" ? "is-hidden" : "columns"}
+              >
+                <div className='column content'>
+                  <h2>Contact Form</h2>
+                  <form
+                    action='https://api.staticforms.xyz/submit'
+                    method='post'
+                    onSubmit={handleSubmit}
+                  >
+                    <div className='field'>
+                      <label className='label'>Your Name</label>
+                      <div className='control'>
+                        <input
+                          className='input'
+                          type='text'
+                          placeholder='Name'
+                          name='name'
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className='field'>
+                      <label className='label'>Your Email</label>
+                      <div className='control'>
+                        <input
+                          className='input'
+                          type='email'
+                          placeholder='Email'
+                          name='email'
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className='field' style={{ display: "none" }}>
+                      <label className='label'>Title</label>
+                      <div className='control'>
+                        <input
+                          type='text'
+                          name='honeypot'
+                          style={{ display: "none" }}
+                          onChange={handleChange}
+                        />
+                        <input
+                          type='hidden'
+                          name='subject'
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
+                    <div className='field'>
+                      <label className='label'>Message</label>
+                      <div className='control'>
+                        <textarea
+                          className='textarea'
+                          placeholder='Your Message'
+                          name='message'
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className='field is-grouped'>
+                      <div className='control'>
+                        <button className='button is-primary' type='submit'>
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div className='column' />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default ContactForm;
+export default Home;

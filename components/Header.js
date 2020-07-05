@@ -38,7 +38,7 @@ const Header = () => {
 
   return (
     <React.Fragment>
-      <div style={{ color: "red" }}>
+      <div style={{ color: "red", backgroundColor: "yellow" }}>
         <Navbar color='light' light expand='md'>
           <Link href='/'>
             <NavLink className='font-weight-bold'>{APP_NAME}</NavLink>
@@ -49,13 +49,13 @@ const Header = () => {
               <React.Fragment>
                 <NavItem>
                   <Link href='/blogs'>
-                    <NavLink>Blogs</NavLink>
+                    <NavLink className='font-weight-bold'>Blogs</NavLink>
                   </Link>
                 </NavItem>
 
                 <NavItem>
                   <Link href='/contact'>
-                    <NavLink>Contact</NavLink>
+                    <NavLink className='font-weight-bold'>Contact</NavLink>
                   </Link>
                 </NavItem>
               </React.Fragment>
@@ -64,12 +64,12 @@ const Header = () => {
                 <React.Fragment>
                   <NavItem>
                     <Link href='/signin'>
-                      <NavLink>Signin</NavLink>
+                      <NavLink className='font-weight-bold'>Signin</NavLink>
                     </Link>
                   </NavItem>
                   <NavItem>
                     <Link href='/signup'>
-                      <NavLink>Signup</NavLink>
+                      <NavLink className='font-weight-bold'>Signup</NavLink>
                     </Link>
                   </NavItem>
                 </React.Fragment>
@@ -102,13 +102,7 @@ const Header = () => {
                 </NavItem>
               )}
 
-              <NavItem>
-                <Link href='/user/crud/blog'>
-                  <NavLink className='btn btn-primary text-light'>
-                    Create Blog
-                  </NavLink>
-                </Link>
-              </NavItem>
+              <NavItem></NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Options
@@ -121,7 +115,7 @@ const Header = () => {
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
-            <NavbarText>The Home School Path Blog</NavbarText>
+            <NavbarText id='hsp'>The Home School Path Blog</NavbarText>
           </Collapse>
         </Navbar>
         <Search />

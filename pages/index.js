@@ -40,16 +40,19 @@ const Index = () => {
             <a className='font-weight-bold'>Signup</a>
           </Link>
           <div style={{ marginTop: "5px", marginBottom: "0px" }}>
-            <div className='card middle'>
-              <div className='front'>
-                <img
-                  maxheight='150px'
-                  width='auto'
-                  src='/static/images/happy2image.jpg'
-                  alt='Happy with the word'
-                />
+            <br />
+          </div>
+
+          <div class='card width-: 100%'>
+            <div class='card__content'>
+              <div class='card__front'>
+                <h3 class='card__title'>"WHEN ONE TEACHES, TWO LEARN"</h3>
+                <p class='card__subtitle'>
+                  Train up a child in the way he should go:
+                </p>
               </div>
-              <div className='back'>
+
+              <div class='card__back'>
                 <div className='back-content middle'>
                   <h2>Kingdom Coders</h2>
                   <span>For His Glory</span>
@@ -66,26 +69,23 @@ const Index = () => {
                     <a href='#'>
                       <i className='fab fa-instagram'></i>
                     </a>
-                    <p>
+                    <p class='card__body'>
                       "for Families Educating at Home During Coronavirus
                       Pandemic Around the nation, more than 124,000 schools have
                       closed, impacting more than 55.1 million students. Chances
                       are that the novel coronavirus, COVID-19, has impacted
                       your family’s school choice. As families evaluate how to
                       keep their children safe and healthy while still learning,
-                      here are some educational resources to navigate these
-                      unique times, including a list of free online resources
-                      and answers to commonly asked questions about
-                      homeschooling and online schooling. If you’re looking for
-                      more learning resources, you can also check out our list
-                      of 100+ free resources for teachers and schools shifting
-                      online." National School Choice Week
+                      many questions arise regarding homeschooling and online
+                      learning. These are unique times and amount of information
+                      online can be overwhelming." The Home School Path Blog was
+                      create for parents and educators to share their own, "best
+                      practice."
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <br />
           </div>
         </div>
       </div>

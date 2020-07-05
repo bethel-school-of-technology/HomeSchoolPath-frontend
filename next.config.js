@@ -10,5 +10,7 @@ module.exports = withCSS({
     DOMAIN_PRODUCTION: "https://hsblog.com",
     FB_APP_ID: "",
     DISQUS_SHORTNAME: "thehomeschoolpath",
+    GOOGLE_CLIENT_ID:
+      "237375236120-h1cn63oko25pd57ognarcvld8dld907v.apps.googleusercontent.com",
   },
 });

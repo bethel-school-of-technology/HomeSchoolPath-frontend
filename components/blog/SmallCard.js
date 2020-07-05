@@ -5,13 +5,13 @@ import { API } from "../../config";
 
 const SmallCard = ({ blog }) => {
   return (
-    <div className='card'>
+    <div className='card' style={{ backgroundColor: "#ADFF2F" }}>
       <section>
         <Link href={`/blogs/${blog.slug}`}>
           <a>
             <img
               className='img img-fluid'
-              style={{ height: "250px", width: "100%" }}
+              style={{ maxHeight: "250px", width: "100%" }}
               src={`${API}/blog/photo/${blog.slug}`}
               alt={blog.title}
             />
@@ -26,7 +26,7 @@ const SmallCard = ({ blog }) => {
               <h5 className='card-title'>{blog.title}</h5>
             </a>
           </Link>
-          <p className='card-text'>{renderHTML(blog.excerpt)}</p>
+          <div className='card-text'>{renderHTML(blog.excerpt)}</div>
         </section>
       </div>
 
