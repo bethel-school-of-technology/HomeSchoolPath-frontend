@@ -14,16 +14,18 @@ const Signin = ({ router }) => {
 
   return (
     <Layout>
-      <div className='container-fluid'>
-        <h2 className='text-center pt-4 pb-4'>Signin</h2>
+      <div className='sibg-img'>
+        <div className='container-fluid'>
+          <h2 className='text-center pt-4 pb-4'>Signin</h2>
 
-        <div className='row'>
-          <div className='col-md10 offset-md-5'>{showRedirectMessage()}</div>
-        </div>
+          <div className='row'>
+            <div className='col-md10 offset-md-5'>{showRedirectMessage()}</div>
+          </div>
 
-        <div className='row'>
-          <div className='col-md10 offset-md-5'>
-            <SigninComponent />
+          <div className='row'>
+            <div className='col-md10 offset-md-5'>
+              <SigninComponent />
+            </div>
           </div>
         </div>
       </div>
