@@ -4,7 +4,6 @@ import Layout from "../../components/Layout";
 import { userPublicProfile } from "../../actions/user";
 import { API, DOMAIN, APP_NAME } from "../../config";
 import moment from "moment";
-import ContactForm from "../../components/form/ContactForm";
 
 const UserProfile = ({ user, blogs, query }) => {
   const showUserBlogs = () => {

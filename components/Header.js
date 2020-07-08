@@ -109,9 +109,7 @@ const Header = () => {
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>About</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>

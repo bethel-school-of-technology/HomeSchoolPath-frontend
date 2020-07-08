@@ -21,7 +21,7 @@ const Blogs = ({
       <title>The Homeschool Path | {APP_NAME}</title>
       <meta
         name='description'
-        content='Homeschooling blog and information and experience sharing platform for parents and educators that want to share.'
+        content='Homeschool blog and information and experience sharing platform for parents and educators that want to share.'
       />
       <link rel='canonical' href={`${DOMAIN}${router.pathname}`} />
       <meta
@@ -124,7 +124,7 @@ const Blogs = ({
             <header>
               <div className='col-md-12 pt-3'>
                 <h1 className='display-4 font-weight-bold text-center'>
-                  The Homeschooling Path Blogs for You!
+                  The Homeschool Path Blogs for You!
                 </h1>
               </div>
               <section>
@@ -148,12 +148,11 @@ const Blogs = ({
 Blogs.getInitialProps = () => {
   let skip = 0;
   let limit = 2;
-  return listBlogsWithCategoriesAndTags(skip, limit).then(data => {
- if  (data.error) {
+  return listBlogsWithCategoriesAndTags(skip, limit).then((data) => {
+    if (data.error) {
       /* the request was made and the server responded
       with a status code that falls out of the range of 2xx */
       console.log(data.error);
-  
     } else {
       return {
         blogs: data.blogs,
