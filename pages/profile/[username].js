@@ -64,10 +64,10 @@ const UserProfile = ({ user, blogs, query }) => {
               <div className='card'>
                 <div className='card-body'>
                   <h5 className='card-title bg-primary pt-4 pb-4 pl-4 pr-4 text-light'>
-                    Message {user.name}
+                    {user.name}'s Notes
                   </h5>
                   <br />
-                  <p>ContactForm</p>
+                  <p>Notes section</p>
                 </div>
               </div>
             </div>
