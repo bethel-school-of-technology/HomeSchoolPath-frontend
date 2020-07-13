@@ -1,7 +1,6 @@
 import Layout from "../components/Layout";
 import { withRouter } from "next/router";
 import SigninComponent from "../components/auth/SigninComponent";
-//import Link from 'next/link';
 
 const Signin = ({ router }) => {
   const showRedirectMessage = () => {

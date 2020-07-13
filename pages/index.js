@@ -43,16 +43,16 @@ const Index = () => {
             <br />
           </div>
 
-          <div class='card width-: 100%'>
-            <div class='card__content'>
-              <div class='card__front'>
-                <h3 class='card__title'>"WHEN ONE TEACHES, TWO LEARN"</h3>
-                <p class='card__subtitle'>
+          <div className='card width-: 100%'>
+            <div className='card__content'>
+              <div className='card__front'>
+                <h3 className='card__title'>"WHEN ONE TEACHES, TWO LEARN"</h3>
+                <p className='card__subtitle'>
                   Train up a child in the way he should go:
                 </p>
               </div>
 
-              <div class='card__back'>
+              <div className='card__back'>
                 <div className='back-content middle'>
                   <h2>Kingdom Coders</h2>
                   <span>For His Glory</span>
@@ -69,7 +69,7 @@ const Index = () => {
                     <a href='#'>
                       <i className='fab fa-instagram'></i>
                     </a>
-                    <p class='card__body'>
+                    <p className='card__body'>
                       "for Families Educating at Home During Coronavirus
                       Pandemic Around the nation, more than 124,000 schools have
                       closed, impacting more than 55.1 million students. Chances

@@ -102,16 +102,11 @@ const Header = () => {
                 </NavItem>
               )}
 
-              <NavItem></NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>About</DropdownItem>
-                  <DropdownItem divider />
-                </DropdownMenu>
-              </UncontrolledDropdown>
+              <NavItem>
+                <Link href='/book.index'>
+                  <NavLink className='font-weight-bold'>Book-Finder</NavLink>
+                </Link>
+              </NavItem>
             </Nav>
             <NavbarText id='hsp'>The Home School Path Blog</NavbarText>
           </Collapse>
